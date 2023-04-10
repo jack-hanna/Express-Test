@@ -1,4 +1,5 @@
 const express = require("express");
+require("ejs");
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -10,9 +11,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test", (req, res) => {
-  res.send("Hello Test")
+  res.send("Hello Test");
 });
 
 app.listen(port, () => {
-  console.log(`Application is listening on port ${port}!`)
+  console.log(`Application is listening on port ${port}!`);
 });
