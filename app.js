@@ -1,5 +1,4 @@
 const express = require("express");
-require("ejs");
 const app = express();
 const port = process.env.PORT || 3001;
 
