@@ -1,0 +1,3 @@
+/* Script for manager page interactive elements
+   Developed by
+*/

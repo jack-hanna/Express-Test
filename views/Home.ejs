@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    TODO:
+      0. Make Customer button go to customer html
+      1. Make translate not mess up page or use Google Cloud API for $$
+      2. add in OAuth for the Modal popup
+      3. Center buttons better
+        - Might just change the rows and Columns and brute force it with CSS
+      4. Make buttons larger
+      5. EXTRA: Add flags to some language options
+  -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Smoothie King - Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/Home.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height:100vh">
+      <div class="row mb-3">
+        <div class="col-sm-12 d-flex justify-content-center">
+          <button class="btn btn-danger mr-1 px-4 py-3" id="customer-button" onclick="changePage('Customer')">Customer</button>
+          <button type="button" class="btn btn-danger mr-1 px-4 py-3" id="otheruser-button" data-toggle="modal" data-target="#oauthModal">
+            Authorized User
+          </button>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12 d-flex justify-content-center">
+          <div class="google-translate">
+            <div id="google_translate_element"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 d-flex justify-content-center">
+          <p>Current weather: <span id="currWeather"></span></p>
+          <button onclick="updateWeather()">Update</button>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------------------OAUTH STUFF--------------------------------- -->
+    <div class="modal fade" id="oauthModal" tabindex="-1" role="dialog" aria-labelledby="oauthModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="oauthModalLabel">OAuth Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Please login to continue:</p>
+            <form>
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="auth-login-btn">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------------------------------- END OAUTH STUFF------------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,de',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        // Disable Google Translate toolbar
+        var select = document.querySelector('.goog-te-combo');
+        select.addEventListener('click', function() {
+          setTimeout(function() {
+            var frame = document.querySelector('.goog-te-menu-frame');
+            if(frame) {
+              frame.style.display = 'none';
+            }
+          }, 0);
+        });
+      }
+      function changePage(page) {
+        window.location.href = page;
+      }
+    </script>
+    <script>
+      // Get the login button and the modal
+      const loginBtn = document.querySelector('#auth-login-btn');
+      const modal = document.querySelector('#oauthModal');
+
+      // Add an event listener to the login button
+      loginBtn.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Get the login form and the input fields
+        const loginForm = document.querySelector('#oauth-login-form');
+        const usernameInput = document.querySelector('#username');
+        const passwordInput = document.querySelector('#password');
+
+        // Get the values of the input fields
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+
+        if (username == "server") {
+          changePage("Server");
+        } else if (username == "manager") {
+          changePage("Manager");
+        } else if (username == "menu board") {
+          changePage("Menu");
+        }
+
+        // Add an event listener to the form submit button
+        loginForm.addEventListener('submit', e => {
+          e.preventDefault();
+
+          // Make the OAuth request with the username and password
+          // ...
+          // Do IF ELSE to go to server view or if manager to manager view, otherwise deny login
+          
+          // Close the modal
+          $('#oauthModal').modal('hide');
+        });
+      });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="./scripts/Home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+body {
+    background-color: lightgray;
+    overflow: hidden;
+}
+
+html, body, .container, .row, .col {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+/*
+#section1 h2 {
+    background-color: #452615;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+}
+#section1 p {
+    background-color: #7d5540;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+    height: 110%;
+}
+#section2 h2 {
+    background-color: #b00c0c;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+}
+#section2 p {
+    background-color: #cc4b4b;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+    height: 110%;
+}
+#section3 h2 {
+    background-color: #2b5f87;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+}
+#section3 p {
+    background-color: #497ea6;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+    height: 110%;
+}
+#section4 h2 {
+    background-color: #35782f;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+}
+#section4 p {
+    background-color: #599c52;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+    height: 110%;
+}
+#section5 h2 {
+    background-color: #ad5100;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+}
+#section5 p {
+    background-color: #ba6f2d;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 33%;
+    height: 110%;
+}
+*/
+#logoutButton {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 9999;
+    min-height: 5%;
+    min-width: 10%;
+    height: auto;
+    width: auto;
+    font-size: 12pt;
+    object-fit: fill;
+}

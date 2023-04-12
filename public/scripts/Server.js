@@ -1,0 +1,3 @@
+/* Script for server page interactive elements
+   Developed by
+*/

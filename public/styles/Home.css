@@ -1,0 +1,88 @@
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    background-color: lightgray;
+    margin-top: 0 !important;
+    overflow: hidden;
+}
+
+#google_translate_element {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform-origin: top left;
+    -webkit-transform-origin: top left;
+    font-size: 16px; /* change this value to adjust the font size */
+    height: 40px; /* change this value to adjust the height of the dropdown menu */
+}  
+
+.google-translate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50%;
+}
+.goog-te-gadget {
+    font-size: 14px;
+    color: #333;
+    text-indent: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    max-width: 200px;
+}
+.goog-te-gadget-icon {
+    display: none !important;
+}
+.goog-te-menu-value {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.goog-te-menu {
+    display: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: -1 !important;
+}
+
+.goog-te-gadget .goog-te-footer {
+    display: none;
+}
+
+.goog-te-combo {
+    position: fixed;
+    top: 0;
+    display: none;
+}
+
+.goog-gt- {
+    position: fixed;
+    top: 0;
+    display: none;
+}
+
+#\:2\.container {
+    position: fixed;
+    top: 0;
+    display: none;
+}
+
+#customer-button {
+    height: 150%;
+    width: 500%;
+    font-size: 24pt;
+}
+
+#otheruser-button {
+    height: 150%;
+    width: 500%;
+    font-size: 24pt;
+}

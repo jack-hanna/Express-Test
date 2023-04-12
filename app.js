@@ -4,13 +4,26 @@ const port = process.env.PORT || 3001;
 
 app.set("view engine", "ejs");
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  const data = {name: 'Jack'};
-  res.render('index', data);
+  res.render('Home');
 });
 
-app.get("/test", (req, res) => {
-  res.send("Hello Test");
+app.get("/Server", (req, res) => {
+  res.render('Server');
+});
+
+app.get("/Manager", (req, res) => {
+  res.render('Manager');
+});
+
+app.get("/Customer", (req, res) => {
+  res.render('Customer');
+});
+
+app.get("/Menu", (req, res) => {
+  res.render('Menu');
 });
 
 app.listen(port, () => {

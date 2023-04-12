@@ -1,0 +1,405 @@
+body {
+    background-color: darkgray;
+}
+
+.nav-tabs li:nth-child(1) a {
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+.nav-tabs li:nth-child(2) a {
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+.nav-tabs li:nth-child(3) a {
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+.nav-tabs li:nth-child(4) a {
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+.nav-tabs li:nth-child(5) a {
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+.nav-tabs li:nth-child(6) a {
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+
+ul.nav {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.nav li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+ul.nav li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+.nav li a{
+    min-height: 100px;
+}
+
+/*  SECTION 1  */
+
+#section1 h2 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: xxx-large;
+}
+
+#section1 h3 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: xx-large;
+}
+
+#section1 p {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+#section1 .row {
+    background-color: black;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+/*  SECTION 2  */
+
+#section2 h2 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: xxx-large;
+}
+
+#section2 h3 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: xx-large;
+}
+
+#section2 p {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+#section2 .row {
+    background-color: black;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+/*  SECTION 3  */
+
+#section3 h2 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: xxx-large;
+}
+
+#section3 h3 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: xx-large;
+}
+
+#section3 p {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+#section3 .row {
+    background-color: black;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+/*  SECTION 4  */
+
+#section4 h2 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: xxx-large;
+}
+
+#section4 h3 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: xx-large;
+}
+
+#section4 p {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+#section4 .row {
+    background-color: black;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+/*  SECTION 4  */
+
+#section5 h2 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: xxx-large;
+}
+
+#section5 h3 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: xx-large;
+}
+
+#section5 p {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+#section5 .row {
+    background-color: black;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+/*  SECTION 5  */
+
+#section6 h2 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: xxx-large;
+}
+
+#section6 h3 {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: xx-large;
+}
+
+#section6 p {
+    background-color: black;
+    display: inline-block;
+    color: white;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+#section6 .row {
+    background-color: black;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    height: 110%;
+    font-size: x-large;
+}
+
+/*  SECTION 6  */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: black;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    color: white;
+    font-size: x-large;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    color: black;
+    background-color: white;
+}
+
+#cartButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    min-height: 7%;
+    min-width: 15%;
+    height: auto;
+    width: auto;
+    font-size: xx-large;
+    object-fit: fill;
+}
+
+#cartItems {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cartItems li {
+    margin-bottom: 10px;
+}
+
+#logoutButton {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    min-height: 7%;
+    min-width: 15%;
+    height: auto;
+    width: auto;
+    font-size: xx-large;
+    object-fit: fill;
+}
+
+#contrastButton {
+    position: fixed;
+    top: 10px;
+    left: 15%;
+    margin-left: 20px;
+    z-index: 9999;
+    min-height: 7%;
+    min-width: 15%;
+    height: auto;
+    width: auto;
+    font-size: xx-large;
+    object-fit: fill;
+}
+
+.center-row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item p {
+    margin-right: 60%;
+}

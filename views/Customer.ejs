@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        TODO:
+        1. Change Shopping Cart Button
+        a. Add a Shopping Cart Picture
+        2. Translate, keep Language from frontpage
+        3. Add translate widget
+        4. When scrolling past navbar, make navbar clip to top of screen with Logout and Shopping Cart
+    -->
+    <head>
+        <title>Smoothie King - Customer Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./styles/Customer.css" id="mainStyleSheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            .center-div {
+                position: absolute;
+                top: 20%;
+                left: 10%;
+                width: 80%;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" class="btn" id="cartButton" data-toggle="modal" data-target="#cartModal" data-backdrop="false" style="border: 2px solid black; font-size:large;">Shopping Cart</button>
+        <button type="button" class="btn" id="logoutButton" onclick="homePage()" style="border: 2px solid black; font-size:large;">Logout</button>
+        <button type="button" class="btn" id="contrastButton" onclick="contrast()" style="border: 2px solid black; font-size:large;">High Contrast</button>
+        <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="cart-items">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="placeOrder()">Place Order</button>
+                    <!-- Have Place Order Take info with another Modal-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalSizeSelection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Select Size</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="sizeSelect">Select Size:</label>
+                        <select class="form-control" id="sizeSelect">
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="placeInCart()" data-dismiss="modal">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center-div">
+            <ul class="nav nav-tabs">
+                <li><a href="#section1">Feel Energized Blends</a></li>
+                <li><a href="#section2">Get Fit Blends</a></li>
+                <li><a href="#section3">Manage Weight Blends</a></li>
+                <li><a href="#section4">Be Well Blends</a></li>
+                <li><a href="#section5">Enjoy a Treat Blends</a></li>
+                <li><a href="#section6">Extras</a></li>
+            </ul>
+            <div id="section1">
+                <h2>Feel Energized Blends</h2>
+                <!-- START OF TEMPLATE FOR ITEMS IN THE MENU---------------------------------------------->
+                <div class="row center-row">
+                    <div class="col-sm-11" id="menuItem1">
+                        <h3> Item 1</h3>
+                        <p>Ingredients for Item 1</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="row">
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1">+</button>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn" id="speakButton" data-itemname="menuItem1"> SPEAK </button>
+                            <!--
+                            ASK FOR EXTRAS INSIDE OF SIZE MODAL
+                            EXTRA DROPDOWN WITH SELECTIONS
+                            CHECK FOR ACTIVE SELECTIONS
+                            FIX SHOPPING CART MODAL WHEN IN
+                            HIGH CONTRAST MODE
+                            SAME FOR THE SIZE SELECTOR
+                        -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF TEMPLATE FOR ITEMS IN THE MENU------------------------------------------------->
+            </div>
+            <div id="section2">
+                <h2>Get Fit Blends</h2>
+                
+            </div>
+            <div id="section3">
+                <h2>Manage Weight Blends</h2>
+                
+            </div>
+            <div id="section4">
+                <h2>Be Well Blends</h2>
+                
+            </div>
+            <div id="section5">
+                <h2>Enjoy a Treat Blends</h2>
+                
+            </div>
+            <div id="section6">
+                <h2>Extras</h2>
+                
+            </div>
+        </div>
+        <script>
+            var itemName;
+            $(document).ready(function(){
+                // Add smooth scrolling to all links
+                $("a").on('click', function(event) {
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function(){
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+            });
+            function homePage() {
+                window.location.href = "/";
+            }
+            function placeInCart() {
+                // Get the selected size from the dropdown menu
+                var size = document.getElementById("sizeSelect").value;
+                // get the cart-items div
+                var cartItemsDiv = document.getElementById('cart-items');
+
+                // create a new div to hold each item and its remove button
+                var itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+
+                // create a new p element to hold the item name
+                var itemNameP = document.createElement('p');
+                itemNameP.textContent = size + ' ' + itemName;
+
+                // create a new button to remove the item
+                var removeButton = document.createElement('button');
+                removeButton.type = 'button';
+                removeButton.className = 'btn btn-danger btn-sm';
+                removeButton.textContent = 'Remove';
+                removeButton.addEventListener('click', function() {
+                // remove the item div from the cart-items div
+                cartItemsDiv.removeChild(itemDiv);
+                });
+
+                // add the item name and remove button to the item div
+                itemDiv.appendChild(itemNameP);
+                itemDiv.appendChild(removeButton);
+
+                // add the item div to the cart-items div
+                cartItemsDiv.appendChild(itemDiv);
+                // Close the modal
+                $('#modalSizeSelection').hide();
+            }
+            $('#modalSizeSelection').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                itemName = button.data('itemname'); // Extract item name from data attribute
+                // Do something with the item name, like display it in the modal or pass it to a function
+            });
+
+            function placeOrder() {
+                var cartItemsDiv = document.getElementById('cart-items');
+                var cartItems = cartItemsDiv.querySelectorAll('div');
+                var sizes = [];
+                var items = [];
+
+                var cartItems = Array.from(cartItemsDiv.querySelectorAll('div'));
+                for (var i = 0; i < cartItems.length; i++) {
+                    var cartItem = cartItems[i].querySelector('p').textContent.split(' ');
+                    sizes.push(cartItem[0]);
+                    items.push(cartItem[1]);
+                    cartItemsDiv.removeChild(cartItems[i]);
+                }
+            }
+
+            function contrast() {
+                var sheet = document.getElementById('mainStyleSheet');
+                sheet.setAttribute('href', 'CustomerContrast.css');
+            }
+
+            const speakButton = document.getElementById('speakButton');
+            itemName = speakButton.data('itemname');
+            const textToSpeak = document.getElementById(itemName);
+
+            speakButton.addEventListener('click', () => {
+                const speech = new SpeechSynthesisUtterance();
+                speech.lang = 'en-US';
+                speech.text = textToSpeak.querySelector('h3').textContent + ' ' + textToSpeak.querySelector('p').textContent;
+                speechSynthesis.speak(speech);
+            });
+        </script>
+    </body>
+</html>

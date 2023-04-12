@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Smoothie King - Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/Manager.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-container">
+          <a class="dropdown-item" href="#" id="option1">Section 1</a>
+          <a class="dropdown-item" href="#" id="option2">Section 2</a>
+          <a class="dropdown-item" href="#" id="option3">Section 3</a>
+          <a class="dropdown-item" href="#" id="option4">Section 4</a>
+          <a class="dropdown-item" href="#" id="option5">Section 5</a>
+          <a class="dropdown-item" href="#" onclick="changePage('Server')">Server View</a>
+          <a class="dropdown-item" href="#" onclick="changePage('/')">Logout</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p> This is the main panel thing</p>
+    </div>
+    <div id="container1" class="container">
+      <!-- Employees
+        - Add
+        - Remove
+        - Update
+        - Main view is a table of employees
+        - TODO:
+          - FOR ALL TABLES:
+            - Makes sure columns stretch all the way across
+          - FOR ALL BUTTONS:
+            - Add an onclick()
+      -->
+      <div class="row center-row">
+        <h2> Employee Functions </h2>
+        <div class="col-sm-2" style="border: 2px solid black; height:100%;">
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Add Employee</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Remove Employee</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Update Employee</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Refresh Employees</button>
+        </div>
+        <div class="col-sm-10" style="border: 2px solid black; height:100%;">
+          <div class="table">
+            
+            <div class="row center-row">
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder name </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder ID </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Role</p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder value</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container2" class="container" hidden>
+      <!-- Menu Items
+        - Add
+        - Remove
+        - Update
+        - Main view is a table of all menu items
+      -->
+      <div class="row center-row">
+        <h2> Menu Item Functions </h2>
+        <div class="col-sm-2" style="border: 2px solid black; height:100%;">
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Add Menu Item</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Remove Menu Item</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Update Menu Item</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Refresh Menu Items</button>
+        </div>
+        <div class="col-sm-10" style="border: 2px solid black; height:100%;">
+          <div class="table">
+
+            <div class="row center-row">
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder name </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Ingredients </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Size Prices</p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder value</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container3" class="container" hidden>
+      <!-- Inventory
+        - Add
+        - Remove
+        - Update
+        - Reorder
+        - Order Suggest
+        - Main view is a table of all inventory items
+      -->
+      <div class="row center-row">
+        <h2> Inventory Functions </h2>
+        <div class="col-sm-2" style="border: 2px solid black; height:100%;">
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Add Ingredient</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Remove Ingredient</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Update Ingredient</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Refresh Ingredients</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Reorder Inventory Items</button>
+        </div>
+        <div class="col-sm-10" style="border: 2px solid black; height:100%;">
+          <div class="table">
+
+            <div class="row center-row">
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder name </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder On Hand </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Sizing</p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Price</p>
+              </div>
+            </div>
+
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div id="container4" class="container" hidden>
+      <!-- History
+        - Past Sales
+          - By Day
+        - Past Orders
+          - Past 100
+        - Pie chart of Past Sales:
+          - By Item
+          - By Category
+          - Switch between one day and one week
+        - Main view is the Sales History
+      -->
+      <div class="row center-row">
+        <h2> Histories Functions </h2>
+        <div class="col-sm-2" style="border: 2px solid black; height:100%;">
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">View Sales History</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">View Order History</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">View Sales Chart</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Eventually, cat/ day views</button>
+        </div>
+        <div class="col-sm-10" style="border: 2px solid black; height:100%;">
+          <!-- PAST SALES -->
+          <div class="table" id="pastSales">
+
+            <div class="row center-row">
+              <div class="col-sm-2" style="border: 2px solid black; height:auto;">
+                <p> place holder OrderID </p>
+              </div>
+              <div class="col-sm-2" style="border: 2px solid black; height:auto;">
+                <p> place holder names </p>
+              </div>
+              <div class="col-sm-2" style="border: 2px solid black; height:auto;">
+                <p> place holder sizes </p>
+              </div>
+              <div class="col-sm-2" style="border: 2px solid black; height:auto;">
+                <p> place holder total cost</p>
+              </div>
+              <div class="col-sm-2" style="border: 2px solid black; height:auto;">
+                <p> place holder employee ID</p>
+              </div>
+              <div class="col-sm-2" style="border: 2px solid black; height:auto;">
+                <p> place holder Date-Time</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- PAST ORDERS -->
+          <div class="table" id="pastOrders" hidden>
+
+            <div class="row center-row">
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder OrderID </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Order Total </p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Manager ID</p>
+              </div>
+              <div class="col-sm-3" style="border: 2px solid black; height:auto;">
+                <p> place holder Time</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container5" class="container" hidden>
+      <!-- Reports
+        - X-Report
+        - Z-Report
+        - Pie Charts of Sales Again
+          - Copy from container 4
+        - Main view is past Z-Reports
+      -->
+      <div class="row center-row">
+        <h2> Reports Functions </h2>
+        <div class="col-sm-2" style="border: 2px solid black; height:100%;">
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">X-Report</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Z-Report</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">Pie Chart Buttons</button>
+          <button class="btn" href="#" id="option1" style="border: 2px solid black;">"  "</button>
+        </div>
+        <div class="col-sm-10" style="border: 2px solid black; height:100%;">
+          <div class="table">
+
+            <div class="row center-row">
+              <div class="col-sm-4" style="border: 2px solid black; height:auto;">
+                <p> place holder Z-Report Number </p>
+              </div>
+              <div class="col-sm-4" style="border: 2px solid black; height:auto;">
+                <p> place holder Total </p>
+              </div>
+              <div class="col-sm-4" style="border: 2px solid black; height:auto;">
+                <p> place holder Date-Time</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/Manager.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#option1").click(function() {
+          $("#container1").show();
+          $("#container2").hide();
+          $("#container3").hide();
+          $("#container4").hide();
+          $("#container5").hide();
+        });
+        
+        $("#option2").click(function() {
+          $("#container1").hide();
+          $("#container2").show();
+          $("#container3").hide();
+          $("#container4").hide();
+          $("#container5").hide();
+        });
+
+        $("#option3").click(function() {
+          $("#container1").hide();
+          $("#container2").hide();
+          $("#container3").show();
+          $("#container4").hide();
+          $("#container5").hide();
+        });
+        
+        $("#option4").click(function() {
+          $("#container1").hide();
+          $("#container2").hide();
+          $("#container3").hide();
+          $("#container4").show();
+          $("#container5").hide();
+        });
+
+        $("#option5").click(function() {
+          $("#container1").hide();
+          $("#container2").hide();
+          $("#container3").hide();
+          $("#container4").hide();
+          $("#container5").show();
+        });
+      });
+      function changePage(page) {
+        window.location.href = page;
+      }
+    </script>
+  </body>
+</html>

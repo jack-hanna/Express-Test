@@ -1,0 +1,25 @@
+body {
+    background-color: lightgray;
+    overflow: hidden;
+}
+
+html, body, .container, .row, .col {
+    height: 95%;
+    width: 100%;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    top: 1%;
+}
+
+.center-row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dropdownMenuButton {
+    top: 1%;
+    left: 2%;
+}

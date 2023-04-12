@@ -1,0 +1,3 @@
+/* Script for customer page interactive elements
+   Developed by
+*/
