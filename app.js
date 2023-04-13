@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 const dbFunctions = require("./public/scripts/dbFunctions");
-this.helper = new dbFunctions();
+const helper = new dbFunctions();
 
 app.set("view engine", "ejs");
 
