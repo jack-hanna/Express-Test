@@ -18,8 +18,16 @@ app.get("/Manager", (req, res) => {
   res.render('Manager');
 });
 
+var items = [
+  {name: "item1"},
+  {name: "item2"},
+  {name: "item3"},
+  {name: "item4"},
+  {name: "item5"}
+];
+
 app.get("/Customer", (req, res) => {
-  res.render('Customer');
+  res.render('Customer', {items: items});
 });
 
 app.get("/Menu", (req, res) => {

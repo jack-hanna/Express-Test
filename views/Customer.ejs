@@ -113,7 +113,11 @@
             </div>
             <div id="section2">
                 <h2>Get Fit Blends</h2>
-                
+                <ul>
+                    <% items.forEach(function(item){ %>
+                        <li><%= item.name %></li>
+                    <% }) %>
+                </ul>
             </div>
             <div id="section3">
                 <h2>Manage Weight Blends</h2>
