@@ -121,7 +121,11 @@
             </div>
             <div id="section3">
                 <h2>Manage Weight Blends</h2>
-                
+                <ul>
+                    <% dbItems.forEach(function(dbItem){ %>
+                        <li><%= dbItem %></li>
+                    <% }) %>
+                </ul>
             </div>
             <div id="section4">
                 <h2>Be Well Blends</h2>
