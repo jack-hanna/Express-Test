@@ -29,7 +29,11 @@ var items = [
   {name: "item5"}
 ];
 
-var dbItems = helper.getColumn("employeelist", "ename");
+var dbItems = ["Data has not been retrieved"];
+helper.getColumn("employeelist", "ename").then(
+  function(value) {dbItems = value},
+  function(error) {dbItems = ["An error has occured"]}
+);
 
 app.get("/Customer", (req, res) => {
   res.render('Customer', {
