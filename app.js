@@ -29,7 +29,7 @@ var items = [
   {name: "item5"}
 ];
 
-var dBItems = helper.getColumn("employeelist", "ename");
+var dbItems = helper.getColumn("employeelist", "ename");
 
 app.get("/Customer", (req, res) => {
   res.render('Customer', {
