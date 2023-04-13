@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-const helperFunctions = require("./public/scripts/dbFunctions");
+const dbFunctions = require("./public/scripts/dbFunctions");
+this.helper = new dbFunctions();
 
 app.set("view engine", "ejs");
 
@@ -28,7 +29,7 @@ var items = [
   {name: "item5"}
 ];
 
-var dBItems = helperFunctions.getColumn("employeelist", "ename");
+var dBItems = helper.getColumn("employeelist", "ename");
 
 app.get("/Customer", (req, res) => {
   res.render('Customer', {
