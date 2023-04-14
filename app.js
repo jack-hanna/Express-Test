@@ -28,7 +28,7 @@ var catItems_4 = ["Items not Retrieved",];
 var catItems_5 = ["Items not Retrieved",];
 var catItems_6 = ["Items not Retrieved",];*/
 
-helper.getItemsFromCategory("menuitem", "item", "Feel_Energized_Blend").then(
+/*helper.getItemsFromCategory("menuitem", "item", "Feel_Energized_Blend").then(
   function(value) {
     value.forEach(function(item){
       helper.getElement("menuitem", "item", item, "ingredients").then(
@@ -38,7 +38,13 @@ helper.getItemsFromCategory("menuitem", "item", "Feel_Energized_Blend").then(
     });
   },
   function(error) {catItems_1 += [{name: "Error", ingredients: ["Menu Item not found"]}]}
-);
+);*/
+
+catItems_1 = [
+  {name: "Test 1", ingredients: ["one", "two", "three"]},
+  {name: "Test 2", ingredients: ["four", "five", "six"]},
+  {name: "Test 3", ingredients: ["seven", "eight", "nine"]},
+];
 
 catItems_1.forEach(function(item){
   console.log("Name: " + item.name + "    Ingredients: " + item.ingredients);
