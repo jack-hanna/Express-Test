@@ -87,7 +87,7 @@
             <div id="section1">
                 <h2>Feel Energized Blends</h2>
                 <!-- START OF TEMPLATE FOR ITEMS IN THE MENU---------------------------------------------->
-                <div class="row center-row">
+                    <!--
                     <div class="col-sm-11" id="menuItem1">
                         <h3> Item 1</h3>
                         <p>Ingredients for Item 1</p>
@@ -98,46 +98,60 @@
                         </div>
                         <div class="row">
                             <button type="button" class="btn" id="speakButton" data-itemname="menuItem1"> SPEAK </button>
-                            <!--
                             ASK FOR EXTRAS INSIDE OF SIZE MODAL
                             EXTRA DROPDOWN WITH SELECTIONS
                             CHECK FOR ACTIVE SELECTIONS
                             FIX SHOPPING CART MODAL WHEN IN
                             HIGH CONTRAST MODE
                             SAME FOR THE SIZE SELECTOR
-                        -->
                         </div>
                     </div>
-                </div>
+                    -->
+                <ul>
+                    <% catItems_1.forEach(function(item){ %>
+                        <li><%= item %></li>
+                    <% }) %>
+                </ul>
                 <!-- END OF TEMPLATE FOR ITEMS IN THE MENU------------------------------------------------->
             </div>
             <div id="section2">
                 <h2>Get Fit Blends</h2>
                 <ul>
-                    <% items.forEach(function(item){ %>
-                        <li><%= item.name %></li>
+                    <% catItems_2.forEach(function(item){ %>
+                        <li><%= item %></li>
                     <% }) %>
                 </ul>
-            </div>
             <div id="section3">
                 <h2>Manage Weight Blends</h2>
                 <ul>
-                    <% dbItems.forEach(function(dbItem){ %>
-                        <li><%= dbItem %></li>
+                    <% catItems_3.forEach(function(item){ %>
+                        <li><%= item %></li>
                     <% }) %>
                 </ul>
             </div>
             <div id="section4">
                 <h2>Be Well Blends</h2>
-                
+                <ul>
+                    <% catItems_4.forEach(function(item){ %>
+                        <li><%= item %></li>
+                    <% }) %>
+                </ul>
             </div>
             <div id="section5">
                 <h2>Enjoy a Treat Blends</h2>
-                
+                <ul>
+                    <% catItems_5.forEach(function(item){ %>
+                        <li><%= item %></li>
+                    <% }) %>
+                </ul>
             </div>
             <div id="section6">
                 <h2>Extras</h2>
-                
+                <ul>
+                    <% catItems_6.forEach(function(item){ %>
+                        <li><%= item %></li>
+                    <% }) %>
+                </ul>
             </div>
         </div>
         <script>

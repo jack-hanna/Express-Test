@@ -21,24 +21,42 @@ app.get("/Manager", (req, res) => {
   res.render('Manager');
 });
 
-var items = [
-  {name: "item1"},
-  {name: "item2"},
-  {name: "item3"},
-  {name: "item4"},
-  {name: "item5"}
-];
-
-var dbItems = ["Data has not been retrieved"];
-helper.getColumn("employeelist", "ename").then(
-  function(value) {dbItems = value},
-  function(error) {dbItems = ["An error has occured"]}
+var catItems_1 = ["Items not Retrieved",];
+var catItems_2 = ["Items not Retrieved",];
+var catItems_3 = ["Items not Retrieved",];
+var catItems_4 = ["Items not Retrieved",];
+var catItems_5 = ["Items not Retrieved",];
+var catItems_6 = ["Items not Retrieved",];
+helper.getItemsFromCategory("menuitem", "item", "Feel_Energized_Blend").then(
+  function(value) {catItems_1 = value},
+  function(error) {catItems_1 = ["An error has occured"]}
 );
+helper.getItemsFromCategory("menuitem", "item", "Get_Fit_Blend").then(
+  function(value) {catItems_2 = value},
+  function(error) {catItems_2 = ["An error has occured"]}
+);
+helper.getItemsFromCategory("menuitem", "item", "Manage_Weight_Blends").then(
+  function(value) {catItems_3 = value},
+  function(error) {catItems_3 = ["An error has occured"]}
+);
+helper.getItemsFromCategory("menuitem", "item", "Be_Well_Blends").then(
+  function(value) {catItems_4 = value},
+  function(error) {catItems_4 = ["An error has occured"]}
+);
+helper.getItemsFromCategory("menuitem", "item", "Enjoy_A_Treat_Blends").then(
+  function(value) {catItems_5 = value},
+  function(error) {catItems_5 = ["An error has occured"]}
+);
+
 
 app.get("/Customer", (req, res) => {
   res.render('Customer', {
-    items: items,
-    dbItems: dbItems
+    catItems_1: catItems_1,
+    catItems_2: catItems_2,
+    catItems_3: catItems_3,
+    catItems_4: catItems_4,
+    catItems_5: catItems_5,
+    catItems_6: catItems_6
   });
 });
 
