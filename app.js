@@ -27,6 +27,7 @@ var catItems_3 = ["Items not Retrieved",];
 var catItems_4 = ["Items not Retrieved",];
 var catItems_5 = ["Items not Retrieved",];
 var catItems_6 = ["Items not Retrieved",];
+
 helper.getItemsFromCategory("menuitem", "item", "Feel_Energized_Blend").then(
   function(value) {catItems_1 = value},
   function(error) {catItems_1 = ["An error has occured"]}
