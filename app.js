@@ -73,7 +73,7 @@ menuItems.forEach(function(item){
 
 app.get("/Customer", (req, res) => {
   res.render('Customer', {
-    catItems_1: catItems_1,
+    catItems_1: catItems_1
     /*catItems_2: catItems_2,
     catItems_3: catItems_3,
     catItems_4: catItems_4,
