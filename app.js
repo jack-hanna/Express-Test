@@ -40,6 +40,10 @@ helper.getItemsFromCategory("menuitem", "item", "Feel_Energized_Blend").then(
   function(error) {catItems_1 += [{name: "Error", ingredients: ["Menu Item not found"]}]}
 );
 
+catItems_1.forEach(function(item){
+  console.log("Name: " + item.name + "    Ingredients: " + item.ingredients);
+});
+
 /*helper.getItemsFromCategory("menuitem", "item", "Get_Fit_Blend").then(
   function(value) {catItems_2 = value},
   function(error) {catItems_2 = ["An error has occured"]}
