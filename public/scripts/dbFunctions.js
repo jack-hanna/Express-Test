@@ -492,7 +492,19 @@ class dbFunctions {
     @param sizePrice a String representing the name of the size/price field to update in the database
     @param newPrice a String representing the new price to set for the specified menu item size
     */
-    async changePriceMenu(menuItem, sizePrice, newPrice) {}
+    async changePriceMenu(menuItem, sizePrice, newPrice) {
+        if (parseFloat(newPrice) <= 0) {
+            console.log("Cannot set price to be $0 or less");
+            return;
+          }
+          try {
+            const conn = await this.connection.getConnection();
+            const sqlStatement = `UPDATE menuitem SET ${sizePrice} = ${newPrice} WHERE item = '${menuItem}'`;
+            await conn.query(sqlStatement);
+          } catch (e) {
+            console.log("Error accessing Database. changePriceMenu");
+          }
+    }
 
 
     /**
@@ -503,7 +515,19 @@ class dbFunctions {
     @param ingredient a String representing the name of the ingredient to change the bulk price of
     @param newPrice a String representing the new bulk price to set for the specified ingredient
     */
-    async changePriceBulk(ingredient, newPrice) {}
+    async changePriceBulk(ingredient, newPrice) {
+        if (parseFloat(newPrice) <= 0) {
+            console.log("Cannot set price to be $0 or less");
+            return;
+          }
+          try {
+            const conn = await this.connection.getConnection();
+            const sqlStatement = `UPDATE inventory SET bulkcost = ${newPrice} WHERE itemname = '${ingredient}'`;
+            await conn.query(sqlStatement);
+          } catch (e) {
+            console.log("Error accessing Database. changePriceBulk");
+          }
+    }
 
 
     /**
@@ -516,7 +540,35 @@ class dbFunctions {
     @param newSizing the new sizing for the inventory item
     @author Ethan Masters 
     */
-    async updateInventoryInfo(ingredient, newAmount, newBulkSize, newBulkUnits, newPrice, newSizing) {}
+    async updateInventoryInfo(ingredient, newAmount, newBulkSize, newBulkUnits, newPrice, newSizing) {
+        if (parseFloat(newPrice) <= 0) {
+            console.log("Cannot set price to be $0 or less");
+            return;
+          }
+          if (parseFloat(newAmount) < 0) {
+            console.log("Cannot set amount to be less than 0");
+            return;
+          }
+          if (parseFloat(newBulkSize) <= 0) {
+            console.log("Cannot set amount to be less than or equal to 0");
+            return;
+          }
+          try {
+            const conn = await this.connection.getConnection();
+            let sqlStatement = `UPDATE inventory SET bulkcost = ${newPrice} WHERE itemname = '${ingredient}'`;
+            await conn.query(sqlStatement);
+            sqlStatement = `UPDATE inventory SET totalsize = ${newAmount} WHERE itemname = '${ingredient}'`;
+            await conn.query(sqlStatement);
+            sqlStatement = `UPDATE inventory SET bulksize = ${newBulkSize} WHERE itemname = '${ingredient}'`;
+            await conn.query(sqlStatement);
+            sqlStatement = `UPDATE inventory SET bulkunits = '${newBulkUnits}' WHERE itemname = '${ingredient}'`;
+            await conn.query(sqlStatement);
+            sqlStatement = `UPDATE inventory SET sizing = '${newSizing}' WHERE itemname = '${ingredient}'`;
+            await conn.query(sqlStatement);
+          } catch (e) {
+            console.log("Error accessing Database. updateInventoryInfo");
+          }
+    }
 
 
     /**
@@ -615,7 +667,20 @@ class dbFunctions {
     @return an ArrayList of Strings containing the names of the items belonging to the specified category
     @author Jack Hanna
     */
-    async getItemsFromCategory(table, colName, category){}
+    async getItemsFromCategory(table, colName, category){
+        const columnData = [];
+        try {
+            const conn = await this.connection.pool.connect();
+            const sqlStatement = `SELECT ${colName} FROM ${table} WHERE category = '${category}'`;
+            const result = await conn.query(sqlStatement);
+
+            const columnData = result.rows.map(row => row[colName]);
+            return columnData;
+        } catch (e) {
+            console.log('Error accessing Database. getItemsFromCategory');
+            throw new Error(e);
+        }
+    }
 
 
     /**
