@@ -143,6 +143,7 @@
                         </div>
                     </div>
                 <% }) %>
+            </div>
             <div id="section3">
                 <h2>Manage Weight Blends</h2>
                 <% catItems_3.forEach(function(item){ %>
@@ -247,16 +248,13 @@
                     if (this.hash !== "") {
                         // Prevent default anchor click behavior
                         event.preventDefault();
-
                         // Store hash
                         var hash = this.hash;
-
                         // Using jQuery's animate() method to add smooth page scroll
                         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
                         $('html, body').animate({
                             scrollTop: $(hash).offset().top
                         }, 800, function(){
-
                             // Add hash (#) to URL when done scrolling (default click behavior)
                             window.location.hash = hash;
                         });
@@ -271,15 +269,12 @@
                 var size = document.getElementById("sizeSelect").value;
                 // get the cart-items div
                 var cartItemsDiv = document.getElementById('cart-items');
-
                 // create a new div to hold each item and its remove button
                 var itemDiv = document.createElement('div');
                 itemDiv.className = 'cart-item';
-
                 // create a new p element to hold the item name
                 var itemNameP = document.createElement('p');
                 itemNameP.textContent = size + ' ' + itemName;
-
                 // create a new button to remove the item
                 var removeButton = document.createElement('button');
                 removeButton.type = 'button';
@@ -289,11 +284,9 @@
                 // remove the item div from the cart-items div
                 cartItemsDiv.removeChild(itemDiv);
                 });
-
                 // add the item name and remove button to the item div
                 itemDiv.appendChild(itemNameP);
                 itemDiv.appendChild(removeButton);
-
                 // add the item div to the cart-items div
                 cartItemsDiv.appendChild(itemDiv);
                 // Close the modal
@@ -304,13 +297,11 @@
                 itemName = button.data('itemname'); // Extract item name from data attribute
                 // Do something with the item name, like display it in the modal or pass it to a function
             });
-
             function placeOrder() {
                 var cartItemsDiv = document.getElementById('cart-items');
                 var cartItems = cartItemsDiv.querySelectorAll('div');
                 var sizes = [];
                 var items = [];
-
                 var cartItems = Array.from(cartItemsDiv.querySelectorAll('div'));
                 for (var i = 0; i < cartItems.length; i++) {
                     var cartItem = cartItems[i].querySelector('p').textContent.split(' ');
@@ -319,16 +310,13 @@
                     cartItemsDiv.removeChild(cartItems[i]);
                 }
             }
-
             function contrast() {
                 var sheet = document.getElementById('mainStyleSheet');
                 sheet.setAttribute('href', './styles/CustomerContrast.css');
             }
-
             const speakButton = document.getElementById('speakButton');
             itemName = speakButton.data('itemname');
             const textToSpeak = document.getElementById(itemName);
-
             speakButton.addEventListener('click', () => {
                 const speech = new SpeechSynthesisUtterance();
                 speech.lang = 'en-US';

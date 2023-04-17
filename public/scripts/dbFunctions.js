@@ -24,6 +24,7 @@ class dbFunctions {
             const sqlStatement = `SELECT ${colName} FROM ${tableName} WHERE ${keyColName} = '${rowKey}'`;
             const result = await client.query(sqlStatement);
             if (result.rows.length > 0) {
+                client.release();
                 return result.rows[0][colName];
             }
             client.release();
@@ -675,6 +676,7 @@ class dbFunctions {
             const result = await conn.query(sqlStatement);
 
             const columnData = result.rows.map(row => row[colName]);
+            conn.release();
             return columnData;
         } catch (e) {
             console.log('Error accessing Database. getItemsFromCategory');
