@@ -52,7 +52,9 @@
               <div id="container1">
                 <h2> Feel Energized Blends</h2>
                 <div>
-                  <button id="buttons" class="btn" style="border: 2px solid black;" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1"> Item 1</button>
+                  <% catItems_1.forEach(function(item){ %>
+                  <button id="buttons" class="btn" style="border: 2px solid black;" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1"><%= item.name %></button>
+                  <% }) %>
                   <!-- Make it so the Price appears next to the item in checkout and have the remove button next to it.
                   -->
                   <!--
@@ -66,21 +68,36 @@
               </div>
               <div id="container2" hidden>
                 <h2> Get Fit Blends</h2>
+                <% catItems_2.forEach(function(item){ %>
+                  <button id="buttons" class="btn" style="border: 2px solid black;" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1"><%= item.name %></button>
+                <% }) %>
               </div>
               <div id="container3" hidden>
                 <h2> Manage Weight Blends</h2>
+                <% catItems_3.forEach(function(item){ %>
+                  <button id="buttons" class="btn" style="border: 2px solid black;" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1"><%= item.name %></button>
+                <% }) %>
               </div>
               <div id="container4" hidden>
                 <h2> Be Well Blends</h2>
+                <% catItems_4.forEach(function(item){ %>
+                  <button id="buttons" class="btn" style="border: 2px solid black;" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1"><%= item.name %></button>
+                <% }) %>
               </div>
               <div id="container5" hidden>
                 <h2> Enjoy a Treat Blends</h2>
+                <% catItems_5.forEach(function(item){ %>
+                  <button id="buttons" class="btn" style="border: 2px solid black;" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1"><%= item.name %></button>
+                <% }) %>
               </div>
             </div>
           </div>
           <div class="row" style="border: 2px solid black; height: 40%;">
             <div class="col">
               <h3> Extras/ Addons</h3>
+              <% exItems.forEach(function(item){ %>
+                <button id="buttons" class="btn" style="border: 2px solid black;" data-toggle="modal" data-target="#modalSizeSelection" data-backdrop="false" data-itemname="Item 1"><%= item %></button>
+              <% }) %>
             </div>
           </div>
         </div>
